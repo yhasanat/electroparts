@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ElectroParts Palestine | متجر قطع إلكترونية</title>
+  <meta name="description" content="متجر فلسطيني لقطع Arduino وESP32 والحساسات وRaspberry Pi وأدوات المختبر.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="topbar">
+    <div class="container">
+      <span>توصيل داخل الخليل والضفة حسب المنطقة</span>
+      <span>هاتف: <b data-store-phone></b> | <span data-store-city></span></span>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">⚡</span>
+        <span><span data-store-name></span><small>Arduino • ESP32 • Sensors • Lab Tools</small></span>
+      </a>
+      <div class="search"><input type="search" placeholder="ابحث عن ESP32، حساس حرارة، Arduino..." data-search></div>
+      <nav class="nav">
+        <a href="#products">المنتجات</a>
+        <a href="#services">الخدمات</a>
+        <a href="admin.html">المدير</a>
+        <a href="cart.html" class="icon-btn">السلة <span class="badge" data-cart-count>0</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <h1>متجر إلكترونيات عملي لمشاريع Arduino وESP32 في فلسطين</h1>
+          <p>قطع تطوير، حساسات، وحدات اتصال، أدوات مختبر، وحقائب تدريبية جاهزة للطلب والبيع المحلي.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#products">تصفح المنتجات</a>
+            <a class="btn-outline" href="cart.html">عرض السلة</a>
+          </div>
+        </div>
+        <aside class="hero-card">
+          <h3>باقات مقترحة</h3>
+          <div class="mini-list">
+            <div><b>ESP32 IoT Kit</b><br><span>حقيبة لمشاريع WiFi والمنزل الذكي.</span></div>
+            <div><b>Sensor Kit</b><br><span>حساسات حرارة، حركة، مسافة، غاز، تيار.</span></div>
+            <div><b>Training Lab Kit</b><br><span>مناسبة للمراكز المهنية والجامعات.</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <div><h2>التصنيفات</h2><p>اختر الفئة المناسبة لفلترة المنتجات.</p></div>
+        </div>
+        <div class="grid categories" data-categories></div>
+      </div>
+    </section>
+
+    <section class="section" id="products">
+      <div class="container">
+        <div class="section-title">
+          <div><h2>المنتجات</h2><p>منتجات أولية قابلة للإضافة والحذف من لوحة المدير.</p></div>
+          <a class="btn-outline" href="admin.html">إدارة المنتجات</a>
+        </div>
+        <div class="filters" data-category-chips></div>
+        <div class="grid products" data-products></div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-title"><div><h2>خدمات المتجر</h2><p>مصممة للسوق الفلسطيني والمراكز التدريبية ومشاريع الطلبة.</p></div></div>
+        <div class="grid kpi-grid">
+          <div class="card"><h3>تجهيز Kits تعليمية</h3><p>تجميع حقائب Arduino وESP32 والحساسات حسب منهاج التدريب.</p></div>
+          <div class="card"><h3>توريد للمؤسسات</h3><p>تجهيز عروض أسعار للمختبرات والمراكز المهنية والجامعات.</p></div>
+          <div class="card"><h3>قطع بالطلب</h3><p>إضافة منتجات غير متوفرة محليًا من موردين خارجيين بعد مراجعة السعر والمدة.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div><h3 data-store-name></h3><p>متجر متخصص في الإلكترونيات التعليمية والتطبيقية، مصمم كبداية قابلة للتطوير.</p></div>
+      <div><h4>روابط</h4><p><a href="cart.html">السلة</a></p><p><a href="checkout.html">إتمام الطلب</a></p><p><a href="admin.html">لوحة المدير</a></p></div>
+      <div><h4>ملاحظة</h4><p>هذه نسخة MVP. يمكن ربطها لاحقًا مع Google Sheets أو Firebase أو Laravel/MySQL.</p></div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="#" data-whatsapp-link target="_blank" aria-label="WhatsApp">☘</a>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

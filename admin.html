@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>لوحة المدير | ElectroParts Palestine</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="topbar"><div class="container"><span>لوحة إدارة المتجر</span><span>نسخة MVP محلية</span></div></div>
+  <header class="header"><div class="container header-inner">
+    <a href="index.html" class="logo"><span class="logo-mark">⚡</span><span><span data-store-name></span><small>Admin Panel</small></span></a>
+    <nav class="nav"><a href="index.html">عرض المتجر</a><a href="cart.html" class="icon-btn">السلة <span class="badge" data-cart-count>0</span></a><button class="btn-outline" data-logout>خروج</button></nav>
+  </div></header>
+
+  <main class="container">
+    <section class="admin-login card" data-admin-login>
+      <h1>دخول المدير</h1>
+      <p class="small">بيانات تجريبية: admin / admin123. يجب تغييرها عند ربط قاعدة بيانات حقيقية.</p>
+      <form data-login-form>
+        <div class="field"><label>اسم المستخدم</label><input name="username" required value="admin"></div>
+        <div class="field"><label>كلمة المرور</label><input name="password" type="password" required value="admin123"></div>
+        <button class="btn" style="margin-top:12px">دخول</button>
+      </form>
+    </section>
+
+    <section class="admin-layout hidden" data-admin-panel>
+      <aside class="admin-menu card">
+        <button class="active" data-admin-tab="dashboard">لوحة الملخص</button>
+        <button data-admin-tab="products">المنتجات</button>
+        <button data-admin-tab="orders">الطلبات</button>
+        <button data-admin-tab="settings">الإعدادات والنسخ الاحتياطي</button>
+      </aside>
+
+      <div>
+        <section class="admin-section active" data-section="dashboard">
+          <div class="admin-top"><h1>لوحة الملخص</h1><a class="btn" href="index.html">عرض الواجهة</a></div>
+          <div class="grid kpi-grid" data-admin-kpis></div>
+          <div class="card" style="margin-top:18px"><h2>ملاحظات تشغيلية</h2><p>هذه النسخة تحفظ البيانات داخل متصفح المدير. عند النشر الحقيقي يجب ربط قاعدة بيانات مثل Google Sheets / Firebase / MySQL.</p></div>
+        </section>
+
+        <section class="admin-section" data-section="products">
+          <div class="admin-top"><h1>إدارة المنتجات</h1><button class="btn-outline" data-reset-seed>استعادة منتجات تجريبية</button></div>
+          <div class="card" style="margin-bottom:18px">
+            <h2 data-product-form-title>إضافة منتج</h2>
+            <form data-product-form>
+              <div class="form-grid">
+                <div class="field"><label>SKU *</label><input name="sku" required placeholder="ESP32-WROOM-001"></div>
+                <div class="field"><label>الاسم العربي *</label><input name="nameAr" required></div>
+                <div class="field"><label>الاسم الإنجليزي</label><input name="nameEn"></div>
+                <div class="field"><label>الفئة</label><select name="category"></select></div>
+                <div class="field"><label>الماركة</label><input name="brand"></div>
+                <div class="field"><label>السعر بالشيكل</label><input name="price" type="number" step="0.01" value="0"></div>
+                <div class="field"><label>التكلفة</label><input name="cost" type="number" step="0.01" value="0"></div>
+                <div class="field"><label>الكمية</label><input name="stock" type="number" value="0"></div>
+                <div class="field"><label>الحالة</label><select name="status"><option value="available">متوفر</option><option value="hidden">مخفي/نفد</option></select></div>
+                <div class="field"><label>الجهد</label><input name="voltage" placeholder="3.3V / 5V"></div>
+                <div class="field"><label>واجهة الاتصال</label><input name="interface" placeholder="I2C / SPI / UART"></div>
+                <div class="field"><label>التوافق</label><input name="compatibility" placeholder="Arduino / ESP32"></div>
+                <div class="field full"><label>رابط الصورة</label><input name="image" placeholder="https://..."></div>
+                <div class="field full"><label>رابط Datasheet</label><input name="datasheet" placeholder="https://..."></div>
+                <div class="field full"><label>الوصف</label><textarea name="description"></textarea></div>
+                <div class="field"><label><input type="checkbox" name="featured"> منتج مميز</label></div>
+              </div>
+              <button class="btn" style="margin-top:14px">حفظ المنتج</button>
+              <button type="button" class="btn-outline hidden" style="margin-top:14px" data-cancel-edit>إلغاء التعديل</button>
+            </form>
+          </div>
+          <div class="card"><h2>قائمة المنتجات</h2><div data-admin-products></div></div>
+        </section>
+
+        <section class="admin-section" data-section="orders">
+          <div class="admin-top"><h1>إدارة الطلبات</h1></div>
+          <div class="card"><div data-admin-orders></div></div>
+        </section>
+
+        <section class="admin-section" data-section="settings">
+          <div class="admin-top"><h1>الإعدادات والنسخ الاحتياطي</h1></div>
+          <div class="card" style="margin-bottom:18px">
+            <h2>بيانات المتجر</h2>
+            <form data-settings-form>
+              <div class="form-grid">
+                <div class="field"><label>اسم المتجر</label><input name="storeName"></div>
+                <div class="field"><label>الهاتف</label><input name="phone"></div>
+                <div class="field"><label>واتساب بصيغة دولية</label><input name="whatsapp" placeholder="97059xxxxxxx"></div>
+                <div class="field"><label>المدينة</label><input name="city"></div>
+                <div class="field"><label>تكلفة التوصيل</label><input name="deliveryFee" type="number" step="0.01"></div>
+                <div class="field"><label>العملة</label><input name="currency" value="NIS"></div>
+              </div>
+              <button class="btn" style="margin-top:14px">حفظ الإعدادات</button>
+            </form>
+          </div>
+          <div class="card">
+            <h2>النسخ الاحتياطي</h2>
+            <p class="small">صدّر البيانات قبل نقل الموقع أو تعديل المنتجات بكثافة.</p>
+            <button class="btn-outline" data-export>تصدير JSON</button>
+            <label class="btn-outline" style="display:inline-block;cursor:pointer">استيراد JSON <input type="file" accept="application/json" data-import hidden></label>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container"><p>ElectroParts Palestine Admin MVP</p></div></footer>
+  <script src="assets/js/data.js"></script><script src="assets/js/storage.js"></script><script src="assets/js/app.js"></script><script src="assets/js/admin.js"></script>
+</body>
+</html>

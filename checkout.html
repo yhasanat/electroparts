@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>إتمام الطلب | ElectroParts Palestine</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="topbar"><div class="container"><span>إتمام الطلب والدفع عند الاستلام</span><span>هاتف: <b data-store-phone></b></span></div></div>
+  <header class="header"><div class="container header-inner">
+    <a href="index.html" class="logo"><span class="logo-mark">⚡</span><span><span data-store-name></span><small>Checkout</small></span></a>
+    <nav class="nav"><a href="index.html">المتجر</a><a href="cart.html" class="icon-btn">السلة <span class="badge" data-cart-count>0</span></a></nav>
+  </div></header>
+  <main class="container">
+    <div class="page-head"><h1>إتمام الطلب</h1><p class="small">أدخل بيانات الزبون. الطلب يحفظ داخل المتصفح في نسخة MVP.</p></div>
+    <div class="checkout-layout">
+      <section class="card">
+        <form data-checkout-form>
+          <div class="form-grid">
+            <div class="field"><label>اسم الزبون *</label><input name="name" required placeholder="مثال: أحمد محمد"></div>
+            <div class="field"><label>رقم الهاتف *</label><input name="phone" required placeholder="059xxxxxxx"></div>
+            <div class="field"><label>المدينة *</label><input name="city" required placeholder="الخليل / دورا / بيت لحم..."></div>
+            <div class="field"><label>طريقة الدفع</label><select name="paymentMethod"><option value="cod">الدفع عند الاستلام</option><option value="bank">تحويل بنكي</option><option value="wallet">محفظة إلكترونية لاحقًا</option></select></div>
+            <div class="field full"><label>العنوان *</label><textarea name="address" required placeholder="اكتب العنوان التفصيلي"></textarea></div>
+            <div class="field full"><label>ملاحظات</label><textarea name="notes" placeholder="أي ملاحظات على الطلب أو التوصيل"></textarea></div>
+          </div>
+          <button class="btn" style="margin-top:14px" data-place-order>تأكيد الطلب</button>
+        </form>
+        <div data-order-result style="margin-top:16px"></div>
+      </section>
+      <aside class="card"><h2>ملخص الطلب</h2><div data-checkout-summary></div></aside>
+    </div>
+  </main>
+  <footer class="footer"><div class="container"><p>ElectroParts Palestine MVP</p></div></footer>
+  <script src="assets/js/data.js"></script><script src="assets/js/storage.js"></script><script src="assets/js/app.js"></script><script src="assets/js/checkout.js"></script>
+</body>
+</html>
